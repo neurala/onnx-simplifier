@@ -190,17 +190,6 @@ def simplify(
     if not mutable_initializer and model.ir_version >= 4:
         model = remove_initializer_from_input(model)
 
-    # # https://stackoverflow.com/a/60708339
-    # def parse_size(size: str) -> int:
-    #     units = {"B": 1, "KB": 2**10, "MB": 2**20, "GB": 2**30, "TB": 2**40}
-    #     size = size.upper()
-    #     if not re.match(r" ", size):
-    #         size = re.sub(r"([KMGT]?B)", r" \1", size)
-    #     number, unit = [string.strip() for string in size.split()]
-    #     return int(float(number) * units[unit])
-    #
-    # tensor_size_threshold = parse_size(tensor_size_threshold)
-    print("OYYYY I'M SKIPPING THE WHOLE SHEBANG YA HEAR?@")
     if tensor_size_threshold > 2**31 - 9999:
         raise ValueError("tensor_size_threshold should be less than 2GB")
 
