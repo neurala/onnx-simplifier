@@ -1,3 +1,5 @@
+import datetime
+
 from distutils.spawn import find_executable
 from distutils import sysconfig, log
 import setuptools
@@ -58,6 +60,9 @@ except (OSError, subprocess.CalledProcessError):
 if os.getenv('ONNXSIM_SDIST') is not None:
     version = '0.0.0'
     git_version = None
+
+neurala_version = f"neurala.{datetime.datetime.now().strftime('%Y.%m.%d')}"
+version = f"{version}+{neurala_version}"
 
 VersionInfo = namedtuple('VersionInfo', ['version', 'git_version'])(
     version=version,

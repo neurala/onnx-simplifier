@@ -18,7 +18,12 @@ license violation.
 
 
 ## Quick instructions for building the wheel:
+### Docker guide:  
+  use docker to build onnxsim:  
+  `docker build -t onnxsim-builder . && docker run --rm -v $(pwd)/dist:/output onnxsim-builder`  
+    wheel package will be created in your `<current_folder>/dist`
 
+### old guide:
 Download onnx-simplifier fork w/ the correct branch, including submodules  
 Ensure CMake is installed  
 Create virtual environment and run pip install . to install dependencies  

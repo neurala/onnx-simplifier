@@ -3,3 +3,4 @@ onnxoptimizer >= 0.2.5
 onnxruntime >= 1.6.0
 protobuf >= 3.7.0
 rich != 12.1.0
+wheel
